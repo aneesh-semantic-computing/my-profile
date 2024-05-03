@@ -1,4 +1,4 @@
-import ResizeObserver from 'resize-observer-polyfill'
+import ResizeObserver from '@juggle/resize-observer'
 import { useEffect, useRef, useState } from 'react'
 
 const useChartDimensions = (passedSettings:any) => {
@@ -12,7 +12,7 @@ const useChartDimensions = (passedSettings:any) => {
 
   useEffect(() => {
       if (dimensions.width && dimensions.height)
-        return [ref, dimensions]
+        return () => [ref, dimensions]
 
       const element = ref.current
       const _ResizeObserver: any = ResizeObserver;
