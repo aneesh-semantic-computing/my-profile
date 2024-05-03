@@ -19,7 +19,7 @@ export const getHomePageContent = async (lang: string) => {
 };
 
 export const fetchSkills = async () => {
-  const csv = fs.readFileSync('/data/Skills.csv', 'utf8');
+  const csv = fs.readFileSync(process.cwd() + '/app/data/Skills.csv', 'utf8');
   const data = await d3.csvParse(csv);
   return data;
 }
