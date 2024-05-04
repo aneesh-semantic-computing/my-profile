@@ -21,7 +21,7 @@ const Hero = ({ title, description, cta_text, picture } : Props) => {
   return (
     <>
       <Container className="flex flex-wrap md:pt-28 pb-18">
-        <div className="flex items-center w-full lg:w-1/2 lg:px-10 max-md:order-last">
+        <div className="flex items-center w-full lg:w-1/2 lg:px-10 max-lg:order-last">
           <div className="max-w-2xl mb-8 pr-3">
             <h1 className="text-4xl font-bold leading-snug tracking-tight lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight text-white">
               {title}
@@ -37,7 +37,7 @@ const Hero = ({ title, description, cta_text, picture } : Props) => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full lg:w-1/2 max-md:order-first">
+        <div className="flex items-center justify-center w-full lg:w-1/2 max-lg:order-first">
           <Image
             src={picture.filename}
             width="529"

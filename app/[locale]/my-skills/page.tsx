@@ -11,16 +11,15 @@ type Params = {
 };
 
 const MySkillsPage = async ({ params: { locale } }: Params) => {
-    // console.log(locale);
-    // const content = await getHomePageContent(locale);
+    const content = await getHomePageContent(locale);
     const skills = await fetchSkills();
   return (
     <>
-      {/* <Navbar
+      <Navbar
         title={content.NavSection.title}
         cta_text={content.NavSection.cta_text}
-      /> */}
-        <SkillMatrix skills={skills} /><Skills skills={skills} />
+      />
+      <SkillMatrix skills={skills} /><Skills skills={skills} />
     </>
   )
 }

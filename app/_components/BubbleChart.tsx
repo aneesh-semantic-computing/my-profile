@@ -1,8 +1,9 @@
-'use client';
+"use client";
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import styles from "./BubbleChart.module.css";
 
-const BubbleChart = ({ data }:any) => {
+const BubbleChart = ({ data }: any) => {
   const myColor = d3
     .scaleOrdinal()
     .domain([
@@ -17,38 +18,29 @@ const BubbleChart = ({ data }:any) => {
     ])
     .range(d3.schemePaired);
   const xScale = d3.scaleLinear().domain([2013, 2025]).range([10, 750]);
-  const yScale = d3
-    .scaleLinear()
-    .domain([13, 0])
-    .range([0, 725]);
+  const yScale = d3.scaleLinear().domain([13, 0]).range([0, 725]);
   const z = d3.scaleLinear().domain([0, 13]).range([10, 30]);
-  const tooltipRef = useRef()
+  const tooltipRef = useRef();
 
-  useEffect(() => {
-
-  }, [])
+  useEffect(() => {}, []);
 
   return (
     <>
-      {data.map((record:any) => (
-        <>
-          {/* <div ref={tooltipRef} style={{visibility: 'hidden', position: 'absolute'}}>{record.Skill}</div> */}
-          <circle
+      {data.map((record: any) => (
+        <circle
+          key={record.Skill}
+          cx={xScale(record.LastUsed)}
+          cy={yScale(record.Experience)}
+          r={z(record.Competency ** 3 / 100)}
+          fill={String(myColor(record.Category))}
+          fillOpacity="0.75"
+          className={`${styles.bubble} transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 duration-300`}
+        >
+          <title
             key={record.Skill}
-            cx={xScale(record.LastUsed)}
-            cy={yScale(record.Experience)}
-            r={z(record.Competency ** 3 / 100)}
-            fill={String(myColor(record.Category))}
-            fill-opacity='0.75'
-          >
-            <title>{`${record.Skill} (Competency: ${record.Competency} out of 10)`}</title>
-          </circle>
-        </>
+          >{`${record.Skill} (Competency: ${record.Competency} out of 10)`}</title>
+        </circle>
       ))}
-      {/* <circle cx="100" cy="100" r="50" fill={String(myColor("Environment"))}></circle>
-        <circle cx="300" cy="100" r="20" fill={String(myColor("Language"))}></circle>
-        <circle cx="50" cy="600" r="30" fill={String(myColor("Framework"))}></circle>
-        <circle cx="400" cy="500" r="60" fill={String(myColor("Library"))}></circle> */}
     </>
   );
 };
