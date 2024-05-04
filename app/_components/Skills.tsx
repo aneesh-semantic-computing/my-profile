@@ -13,6 +13,7 @@ const Skills = (data:any) => {
   return (
     <Container className="flex flex-wrap md:pt-28 pb-18">
       <svg
+        width={width+xLabelHeight}
         viewBox={`0 0 ${width+xLabelHeight} ${height+xLabelHeight}`}
       >
         <g transform={`translate(${margin.left}, ${margin.top})`}>

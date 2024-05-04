@@ -4,6 +4,7 @@ import Hero from "../_components/Hero";
 import Skills from "../_components/Skills";
 import { fetchSkills, getHomePageContent } from "../helpers/fetchData";
 import SkillMatrix from "../_components/SkillMatrix";
+import TagCloud from "../_components/TagCloud";
 
 type Params = {
     params: {
@@ -14,6 +15,7 @@ type Params = {
 const HomePage = async ({ params: { locale } }: Params) => {
   const content = await getHomePageContent(locale);
   const skills = await fetchSkills();
+  const data = skills.map((s, i) => ({ skill: s.Skill, value: Number(s.Experience) }));
   return (
     <>
       <Navbar
@@ -26,6 +28,7 @@ const HomePage = async ({ params: { locale } }: Params) => {
         cta_text={content.HeroSection.cta_text}
         picture={content.HeroSection.picture}
       />
+      <TagCloud data={data} />
       <SkillMatrix skills={skills}/>
       <Skills skills={skills} />
     </>
