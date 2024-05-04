@@ -1,4 +1,3 @@
-'use client';
 import React from "react";
 import Container from "./Container";
 import { XAxis } from "./XAxis";
@@ -10,10 +9,6 @@ const Skills = (data:any) => {
   const width = 800 - margin.left - margin.right;
   const height = 750 - margin.top - margin.bottom;
   const xLabelHeight = 100;
-
-  const lastUsed = data.skills?.map((skill:any) => skill?.LastUsed);
-  const xMin = Math.min(...lastUsed);
-  const xMax = Math.max(...lastUsed);
 
   return (
     <Container className="flex flex-wrap md:pt-28 pb-18">
