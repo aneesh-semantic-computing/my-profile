@@ -10,11 +10,12 @@ export const getHomePageContent = async (lang: string) => {
   const response = await fetch(url, { next: { revalidate: 100 } });
   const data = await response.json();
 
-  const { NavSection, HeroSection } = data.story.content;
+  const { NavSection, HeroSection, TestimonialSection } = data.story.content;
 
   return {
     NavSection: NavSection[0],
     HeroSection: HeroSection[0],
+    TestimonialSection
   };
 };
 
