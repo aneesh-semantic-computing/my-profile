@@ -10,15 +10,15 @@ import styles from "./TagCloud.module.css";
 
 type Props = {
   data: any;
-}
+};
 
 const TagCloud = ({ data }: Props) => {
   useLayoutEffect(() => {
     let root = am5.Root.new("chartdiv");
     root.setThemes([
-        am5themes_Animated.new(root),
-        am5themes_Material.new(root)
-      ]);
+      am5themes_Animated.new(root),
+      am5themes_Material.new(root),
+    ]);
     let series = root.container.children.push(
       am5wc.WordCloud.new(root, {
         calculateAggregates: true,
@@ -29,14 +29,19 @@ const TagCloud = ({ data }: Props) => {
 
     series.data.setAll(data);
 
-    series.set("heatRules", [{
-      target: series.labels.template,
-      dataField: "value",
-      min: am5.color("#CC00CC"),
-      max: am5.color("#0000CC"),
-      key: "fill"
-    }]);
-    series.labels.template.set("tooltipText", "{category} - Years of experiance: [bold]{value}[/]");
+    series.set("heatRules", [
+      {
+        target: series.labels.template,
+        dataField: "value",
+        min: am5.color("#CC00CC"),
+        max: am5.color("#0000CC"),
+        key: "fill",
+      },
+    ]);
+    series.labels.template.set(
+      "tooltipText",
+      "{category} - Years of experiance: [bold]{value}[/]"
+    );
     series.labels.template.setAll({
       paddingTop: 5,
       paddingBottom: 5,
@@ -45,17 +50,28 @@ const TagCloud = ({ data }: Props) => {
       fontFamily: "Courier New",
       cursorOverStyle: "pointer",
       setStateOnChildren: true,
-      interactive: true
+      interactive: true,
     });
     series.labels.template.states.create("hover", {
-      fill: am5.color(0xffffff)
+      fill: am5.color(0xffffff),
     });
     return () => {
-        root.dispose();
-      };
+      root.dispose();
+    };
   }, [data]);
   return (
     <Container className="flex flex-wrap md:pt-28 pb-18">
+      <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+      <div className="mx-auto max-w-screen-sm">
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
+          Skills
+        </h2>
+        <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+          Below visualisations are to showcase my skillsets. 
+          These are developed using NextJS, TypeScript, AmCharts and D3.
+        </p>
+      </div>
+      </div>
       <div id="chartdiv" className={styles.chartdiv}></div>
     </Container>
   );

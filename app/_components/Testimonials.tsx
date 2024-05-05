@@ -21,8 +21,7 @@ const Testimonials = ({ testimonials }: Props) => {
               Testimonials
             </h2>
             <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-              Explore the whole collection of open-source web components and
-              elements built with the utility classes from Tailwind
+              Below are testimonials from some of my colleagues and peers with whom I had great pleasure to work with.
             </p>
           </div>
           <div className="grid mb-8 lg:mb-12 lg:grid-cols-2">
