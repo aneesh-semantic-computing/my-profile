@@ -18,7 +18,6 @@ const Navbar = ({ title, cta_text } : Props) => {
         </div>
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-        <Link href="/en/my-skills">My Skills</Link>
           <Link href="/fr">Français</Link>
           <Link href="/en">English</Link>
           <Link

@@ -21,7 +21,8 @@ const MySkillsPage = async ({ params: { locale } }: Params) => {
         title={content.NavSection.title}
         cta_text={content.NavSection.cta_text}
       />
-      <TagCloud data={data} />
+      <Skills skills={skills} />
+      {/* <TagCloud data={data} /> */}
       {/* <SkillMatrix skills={skills} /><Skills skills={skills} /> */}
     </>
   )
