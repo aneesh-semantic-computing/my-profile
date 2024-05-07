@@ -1,8 +1,25 @@
 .bubble {
-    stroke-width: 1px;
-    stroke: white;
+  animation: fadeInAnimation 2s ease-in-out;
+}
+.label {
+  animation: fadeInAnimation 4s ease-in-out;
+}
+.bubble:hover {
+  stroke-width: 1px;
+  stroke: #ffffff;
+}
+
+.bubble:has(+ text:hover) {
+  stroke-width: 1px;
+  stroke: #ffffff;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
   }
-  .bubble:hover {
-    stroke-width: 2px;
-    stroke: #f7f5bc;
+
+  100% {
+      opacity: 1;
   }
+}

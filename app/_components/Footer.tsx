@@ -25,8 +25,8 @@ const Footer = () => {
                 </div>
               </a>
               <p>
-                This portfolio website is developed using NexJS 14.3 and React
-                18.3. The website content is fetched from StoryBlok headless CMS
+                This portfolio website is developed using NexJS 14.3, React
+                18.3 and Tailwind CSS 3.4. The website content is fetched from StoryBlok headless CMS
                 and the chart data is loaded from a CSV file. The skill cloud is
                 implemented with AmCharts and the bubble chart is implemented
                 using D3 library.
