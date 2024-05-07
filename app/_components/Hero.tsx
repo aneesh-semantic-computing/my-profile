@@ -36,7 +36,7 @@ const Hero = ({ title, description, cta_text, picture }: Props) => {
               ))}
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
               <Link
-                href="#contact"
+                href="/contact-me"
                 className="px-7 py-3 text-white text-xl bg-indigo-600 rounded-md"
               >
                 {cta_text}

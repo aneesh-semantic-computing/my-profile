@@ -21,7 +21,7 @@ const Navbar = ({ title, cta_text } : Props) => {
           <Link href="/fr">Français</Link>
           <Link href="/en">English</Link>
           <Link
-            href="#contact"
+            href="/contact-me"
             className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
           >
             {cta_text}

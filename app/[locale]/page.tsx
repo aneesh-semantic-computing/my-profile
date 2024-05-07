@@ -6,6 +6,7 @@ import { fetchSkills, getHomePageContent } from "../helpers/fetchData";
 import SkillMatrix from "../_components/SkillMatrix";
 import TagCloud from "../_components/TagCloud";
 import Testimonials from "../_components/Testimonials";
+import Footer from "../_components/Footer";
 
 type Params = {
     params: {
@@ -33,6 +34,7 @@ const HomePage = async ({ params: { locale } }: Params) => {
       <SkillMatrix skills={skills}/>
       <Skills skills={skills} />
       <Testimonials testimonials={content.TestimonialSection}/>
+      <Footer />
     </>
   );
 };
