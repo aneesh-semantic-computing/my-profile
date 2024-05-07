@@ -11,7 +11,7 @@ const Skills = (data:any) => {
   const xLabelHeight = 100;
 
   return (
-    <Container className="flex flex-wrap md:pt-28 pb-18">
+    <Container className="flex flex-wrap items-center justify-center md:pt-28 pb-18">
       <svg
         width={width+xLabelHeight}
         viewBox={`0 0 ${width+xLabelHeight} ${height+xLabelHeight}`}
