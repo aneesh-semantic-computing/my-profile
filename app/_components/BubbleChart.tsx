@@ -35,8 +35,8 @@ const BubbleChart = ({ data }: any) => {
             fill="#fff"
             fontSize={Math.floor(z(record.Competency ** 3 / 100) / 3)}
             fontWeight="500"
-            dominant-baseline="middle"
-            text-anchor="middle"
+            dominantBaseline="middle"
+            textAnchor="middle"
           >{record.Skill}</text>
         </>
       ))}
