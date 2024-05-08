@@ -12,7 +12,7 @@ export const sendEmail = async (prevState: State, formData: FormData) => {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
-      from: "Aneesh <aneesh.anirudhan@semanticcomputing.co.uk>",
+      from: "Aneesh <aneesh.anirudhan@updates.semanticcomputing.co.uk>",
       to: "aneesh.anirudhan@outlook.com",
       subject: `Lead: ${name}-${email}`,
       text: message
