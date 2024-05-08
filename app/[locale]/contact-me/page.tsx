@@ -18,17 +18,17 @@ const ContactMePage = async ({ params: { locale } }: Params) => {
         title={content.NavSection.title}
         cta_text={content.NavSection.cta_text}
       />
-      <section className="dark:bg-slate-800" id="contact">
+      <section id="contact">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="mb-4">
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
-              <p className="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">
+              <p className="text-base font-semibold uppercase tracking-wide text-blue-600">
                 Contact
               </p>
-              <h2 className="font-heading mb-4 font-bold tracking-tight text-white-900 dark:text-white text-3xl sm:text-5xl">
+              <h2 className="font-heading mb-4 font-bold tracking-tight text-white-900 text-3xl sm:text-5xl">
                 Get in Touch
               </h2>
-              <p className="mx-auto mt-4 max-w-3xl text-xl text-white-600 dark:text-slate-400">
+              <p className="mx-auto mt-4 max-w-3xl text-xl text-white-600">
                 Let&apos;s connect and make things happen!
               </p>
             </div>
@@ -36,7 +36,7 @@ const ContactMePage = async ({ params: { locale } }: Params) => {
           <div className="flex items-stretch justify-center">
             <div className="grid md:grid-cols-2">
               <div className="h-full pr-6">
-                <p className="mt-3 mb-12 text-lg text-white-600 dark:text-slate-400">
+                <p className="mt-3 mb-12 text-lg text-white-600">
                   Fillout the form and submit it. Upon receiving your email, I will get back to you to discuss further.
                 </p>
                 <ul className="mb-6 md:mb-0">
@@ -59,10 +59,10 @@ const ContactMePage = async ({ params: { locale } }: Params) => {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-blue-600 dark:text-white">
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-blue-600">
                         I am based in
                       </h3>
-                      <p className="text-white-600 dark:text-slate-400">
+                      <p className="text-white-600">
                         Chertsey, Surrey
                       </p>
                     </div>
@@ -87,13 +87,13 @@ const ContactMePage = async ({ params: { locale } }: Params) => {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-blue-600 dark:text-white">
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-blue-600">
                         Contact
                       </h3>
-                      <p className="text-white-600 dark:text-slate-400">
+                      <p className="text-white-600">
                         Mobile: +44 7411 803369
                       </p>
-                      <p className="text-white-600 dark:text-slate-400">
+                      <p className="text-white-600">
                         Mail: aneesh.anirudhan@yahoo.com
                       </p>
                     </div>
@@ -117,13 +117,13 @@ const ContactMePage = async ({ params: { locale } }: Params) => {
                       </svg>
                     </div>
                     <div className="ml-4 mb-4">
-                      <h3 className="mb-2 text-lg font-medium leading-6 text-blue-600 dark:text-white">
+                      <h3 className="mb-2 text-lg font-medium leading-6 text-blue-600">
                         Contactable hours
                       </h3>
-                      <p className="text-white-600 dark:text-slate-400">
+                      <p className="text-white-600">
                         Monday - Friday: 08:00 - 18:00
                       </p>
-                      <p className="text-white-600 dark:text-slate-400">
+                      <p className="text-white-600">
                         Saturday: 08:00 - 12:00
                       </p>
                     </div>

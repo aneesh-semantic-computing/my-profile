@@ -20,7 +20,7 @@ const Testimonials = ({ testimonials }: Props) => {
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
               Testimonials
             </h2>
-            <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+            <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl">
               Below are testimonials from some of my amazing colleagues and peers with whom I had great pleasure to work with.
             </p>
           </div>
@@ -41,7 +41,7 @@ const Testimonials = ({ testimonials }: Props) => {
                     src={testimonial.picture.filename}
                     alt={testimonial.name}
                   />
-                  <div className="space-y-0.5 font-medium dark:text-white text-left">
+                  <div className="space-y-0.5 font-medium text-left">
                     <div>{testimonial.name}</div>
                     <div className="text-sm font-light text-gray-300">
                     {testimonial.role}
@@ -54,7 +54,7 @@ const Testimonials = ({ testimonials }: Props) => {
           <div className="text-center">
             <a
               href="https://www.linkedin.com/in/aneeshanirudhan"
-              className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-gray-800 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+              className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-white focus:outline-none bg-gray-800 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200"
             >
               Show more...
             </a>

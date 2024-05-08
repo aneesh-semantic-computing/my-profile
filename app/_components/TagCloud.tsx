@@ -66,7 +66,7 @@ const TagCloud = ({ data }: Props) => {
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
           Skills
         </h2>
-        <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+        <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl">
           Below visualisations are to showcase my skillsets. 
           These are developed using NextJS, TypeScript, AmCharts and D3.
         </p>
