@@ -52,6 +52,7 @@ const Hero = ({ title, description, cta_text, picture }: Props) => {
             className={"object-cover rounded-full lg:inline"}
             alt={title}
             loading="eager"
+            priority={true}
           />
         </div>
       </Container>

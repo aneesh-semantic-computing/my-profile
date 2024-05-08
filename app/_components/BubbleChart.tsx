@@ -16,7 +16,6 @@ const BubbleChart = ({ data }: any) => {
       {data.map((record: any) => (
         <g className="container" key={record.Skill}>
           <circle
-            key={record.Skill}
             cx={xScale(record.LastUsed)}
             cy={yScale(record.Experience)}
             r={z(record.Competency ** 3 / 100)}
@@ -24,13 +23,10 @@ const BubbleChart = ({ data }: any) => {
             fillOpacity="0.75"
             className={`${styles.bubble}`}
           >
-            <title
-              key={record.Skill}
-            >{`${record.Skill} (Competency: ${record.Competency} out of 10)`}</title>
+            <title>{`${record.Skill} (Competency: ${record.Competency} out of 10)`}</title>
           </circle>
           <text
             className="chartLabel"
-            key={record.Skill}
             x={xScale(record.LastUsed)}
             y={yScale(record.Experience)}
             fill="#fff"

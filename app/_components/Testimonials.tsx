@@ -30,7 +30,7 @@ const Testimonials = ({ testimonials }: Props) => {
                 key={testimonial.name}
                 className="flex flex-col justify-center items-center p-8 text-center border-b md:p-12 lg:border-r bg-gray-800 border-gray-700"
               >
-                <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
+                <blockquote className="mx-auto mb-8 max-w-2xl text-gray-300">
                   <p className="my-4">
                     {testimonial.testimonial}
                   </p>
@@ -43,7 +43,7 @@ const Testimonials = ({ testimonials }: Props) => {
                   />
                   <div className="space-y-0.5 font-medium dark:text-white text-left">
                     <div>{testimonial.name}</div>
-                    <div className="text-sm font-light text-gray-500 dark:text-gray-400">
+                    <div className="text-sm font-light text-gray-300">
                     {testimonial.role}
                     </div>
                   </div>

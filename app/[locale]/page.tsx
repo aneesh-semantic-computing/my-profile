@@ -3,7 +3,6 @@ import Navbar from "../_components/Navbar";
 import Hero from "../_components/Hero";
 import Skills from "../_components/Skills";
 import { fetchSkills, getHomePageContent } from "../helpers/fetchData";
-import SkillMatrix from "../_components/SkillMatrix";
 import TagCloud from "../_components/TagCloud";
 import Testimonials from "../_components/Testimonials";
 import Footer from "../_components/Footer";
@@ -31,7 +30,6 @@ const HomePage = async ({ params: { locale } }: Params) => {
         picture={content.HeroSection.picture}
       />
       <TagCloud data={data} />
-      <SkillMatrix skills={skills}/>
       <Skills skills={skills} />
       <Testimonials testimonials={content.TestimonialSection}/>
       <Footer />

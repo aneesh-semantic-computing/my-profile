@@ -1,34 +1,17 @@
+"use client";
 import React from "react";
-// import nodemailer from "nodemailer";
+import { useFormState } from "react-dom"
+import { sendEmail } from "../actions";
 
 const ContactForm = () => {
-    // const transporter = nodemailer.createTransport({
-    //     host: "smtp.ethereal.email",
-    //     port: 587,
-    //     secure: false, // Use `true` for port 465, `false` for all other ports
-    //     auth: {
-    //       user: "maddison53@ethereal.email",
-    //       pass: "jn7jnAPss4f63QBp6D",
-    //     },
-    //   });
-  const sendEmail = async (formData: FormData) => {
-    'use server';
-    console.log(formData);
-    // const info = await transporter.sendMail({
-    //     from: `"${formData.get('name')}"<${formData.get('email')}>`, // sender address
-    //     to: "aneesh.anirudhan@yahoo.com, aneesh.anirudhan@gmail.com, aneesh.anirudhan@outlook.com", // list of receivers
-    //     subject: `My Portfolio ${formData.get('name')}`, // Subject line
-    //     text: `${formData.get('message')}`, // plain text body
-    //   });
-    
-    //   console.log("Message sent: %s", info.messageId);
-  };
+  const [sendEmailState, sendEmailAction] = useFormState(sendEmail, { error: null, success:false })
+
   return (
     <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
       <h2 className="mb-4 text-2xl font-bold dark:text-white">
         Ready to Get Started?
       </h2>
-      <form id="contactForm" action={sendEmail}>
+      <form id="contactForm" action={sendEmailAction}>
         <div className="mb-6">
           <div className="mx-0 mb-1 sm:mb-4">
             <div className="mx-0 mb-1 sm:mb-4">
@@ -87,6 +70,7 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
+      {sendEmailState?.success ? <p>Success!!</p> : sendEmailState.error ? <p>${sendEmailState.error}</p> : <p></p> }
     </div>
   );
 };
