@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 type Props = {
   testimonials: {
@@ -36,7 +37,7 @@ const Testimonials = ({ testimonials }: Props) => {
                   </p>
                 </blockquote>
                 <figcaption className="flex justify-center items-center space-x-3">
-                  <img
+                  <Image
                     className="w-9 h-9 rounded-full"
                     src={testimonial.picture.filename}
                     alt={testimonial.name}
