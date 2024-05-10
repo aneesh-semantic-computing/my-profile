@@ -15,7 +15,7 @@ type Props = {
 const Testimonials = ({ testimonials }: Props) => {
   return (
     <>
-      <section>
+      <section id="testimonials">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">
@@ -39,6 +39,8 @@ const Testimonials = ({ testimonials }: Props) => {
                 <figcaption className="flex justify-center items-center space-x-3">
                   <Image
                     className="w-9 h-9 rounded-full"
+                    width={9}
+                    height={9}
                     src={testimonial.picture.filename}
                     alt={testimonial.name}
                   />
