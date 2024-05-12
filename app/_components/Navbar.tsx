@@ -1,34 +1,114 @@
+'use client';
 import Link from "next/link";
+import { useState } from "react";
 
 type Props = {
-    title: string;
-    cta_text: string;
-}
+  title: string;
+  cta_text: string;
+};
 
-const Navbar = ({ title, cta_text } : Props) => {
+const Navbar = ({ title, cta_text }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
-        <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
-          <Link href="/">
-            <span className="flex items-center space-x-2 text-2xl font-medium text-gray-100">
-              <span>{title}</span>
-            </span>
-          </Link>
-        </div>
-
-        <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link href="/fr">Français</Link>
-          <Link href="/en">English</Link>
-          <Link
-            href="/contact-me"
-            className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
+    <nav className="border-gray-200">
+      <div className="container flex flex-wrap relative items-center justify-between mx-auto p-4">
+         <div className="flex flex-wrap items-center justify-between">
+           <Link href="/">
+             <span className="flex items-center space-x-2 text-2xl font-medium text-gray-100">
+               <span>{title}</span>
+             </span>
+           </Link>
+         </div>
+        <button
+          data-collapse-toggle="navbar-default"
+          type="button"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
           >
-            {cta_text}
-          </Link>
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div className={`${!isOpen ? "hidden " : ""}max-md:w-11/12 max-md:absolute max-md:top-full z-50 md:block md:w-auto" id="navbar-default`}>
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row max-md:bg-black md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <Link
+                href="/#skills"
+                className="block py-2 px-3 rounded md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onClick={() => setIsOpen(false)}
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/#testimonials"
+                className="block py-2 px-3 rounded md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onClick={() => setIsOpen(false)}
+              >
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              <a
+                href="/projects"
+                className="block py-2 px-3 rounded md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onClick={() => setIsOpen(false)}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact-me"
+                className="block py-2 px-3 rounded md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
+    // <div className="w-full">
+    //   <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
+    //     <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
+    //       <Link href="/">
+    //         <span className="flex items-center space-x-2 text-2xl font-medium text-gray-100">
+    //           <span>{title}</span>
+    //         </span>
+    //       </Link>
+    //     </div>
+
+    //     <div className="hidden mr-3 space-x-4 lg:flex nav__item">
+    //       <Link href="/fr">Français</Link>
+    //       <Link href="/en">English</Link>
+    //       <Link
+    //         href="/contact-me"
+    //         className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
+    //       >
+    //         {cta_text}
+    //       </Link>
+    //     </div>
+    //   </nav>
+    // </div>
   );
 };
 
