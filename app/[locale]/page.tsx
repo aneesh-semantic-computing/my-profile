@@ -41,7 +41,7 @@ const HomePage = async ({ params: { locale } }: Params) => {
         <SectionHeading title="Skills" description={skillDescription} anchorId="skills" />
         <Skills skills={skills} />
       </Container>
-      <Testimonials testimonials={testimonials}/>
+      <Testimonials testimonials={content?.TestimonialSection}/>
       <Footer />
     </>
   );
