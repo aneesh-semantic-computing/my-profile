@@ -9,6 +9,7 @@ type Props = {
     picture: {
       filename: string;
     };
+    show: boolean;
   }[];
 };
 
@@ -26,7 +27,7 @@ const Testimonials = ({ testimonials }: Props) => {
             </p>
           </div>
           <div className="grid mb-8 lg:mb-12 lg:grid-cols-2">
-            {testimonials?.map((testimonial: any) => (
+            {testimonials?.filter((testimonial: any) => testimonial.show).map((testimonial: any) => (
               <figure
                 key={testimonial.name}
                 className="flex flex-col justify-center items-center p-8 text-center border-b md:p-12 lg:border-r bg-gray-800 border-gray-700"
