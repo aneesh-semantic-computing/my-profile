@@ -24,6 +24,7 @@ const HomePage = async ({ params: { locale } }: Params) => {
   const content = await getHomePageContent(locale);
   const skills = await fetchSkills();
   const data = skills.map((s, i) => ({ skill: s.Skill, value: Number(s.Experience) }));
+  const testimonials = await content?.TestimonialSection?.filter((t:any) => t?.show);
   return (
     <>
       <Navbar
@@ -40,7 +41,7 @@ const HomePage = async ({ params: { locale } }: Params) => {
         <SectionHeading title="Skills" description={skillDescription} anchorId="skills" />
         <Skills skills={skills} />
       </Container>
-      <Testimonials testimonials={content?.TestimonialSection?.filter((t:any) => t?.show)}/>
+      <Testimonials testimonials={testimonials}/>
       <Footer />
     </>
   );
