@@ -40,7 +40,7 @@ const HomePage = async ({ params: { locale } }: Params) => {
         <SectionHeading title="Skills" description={skillDescription} anchorId="skills" />
         <Skills skills={skills} />
       </Container>
-      <Testimonials testimonials={content.TestimonialSection}/>
+      <Testimonials testimonials={content.TestimonialSection.filter((t:any) => t.show)}/>
       <Footer />
     </>
   );
