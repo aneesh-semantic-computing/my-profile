@@ -1,6 +1,6 @@
 Skill,Category,Experience,Competency,LastUsed
-Node JS,Environment,9.5,8,2024
-JavaScript,Language,11,10,2023
+Node JS,Environment,10,8,2024
+JavaScript,Language,11,10,2023.7
 TypeScript,Language,9,10,2024.4
 C#,Language,10,8.5,2024
 Next JS,Framework,5,9,2024
@@ -29,11 +29,6 @@ Dynamo DB,Database,1,6,2024
 PostgreSQL,Database,1.5,6,2014.5
 Mongo DB,Database,1,6,2014
 Redis,Database,2,6,2024
-SharePoint,Platform,10.5,10,2018.5
-Dynamics,Platform,3,7,2016
-Power Apps,Platform,2.5,6,2018.2
-Power BI,Platform,3,8,2018
-Power Automate,Platform,2,6,2018.4
 Azure Flow,Platform,2,6,2018
 Azure API Manager,Platform,2,7,2024.3
 React Native,Framework,2,7,2020
