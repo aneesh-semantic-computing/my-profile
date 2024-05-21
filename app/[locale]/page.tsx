@@ -24,7 +24,6 @@ const HomePage = async ({ params: { locale } }: Params) => {
   const content = await getHomePageContent(locale);
   const skills = await fetchSkills();
   const data = skills.map((s, i) => ({ skill: s.Skill, value: Number(s.Experience) }));
-  const testimonials = await content?.TestimonialSection?.filter((t:any) => t?.show);
   return (
     <>
       <Navbar
