@@ -7,7 +7,7 @@ export const getHomePageContent = async (lang: string) => {
   const token = process.env.SB_TOKEN;
   const url = `https://api.storyblok.com/v2/cdn/stories/home-page?version=${version}&token=${token}&language=${lang}`;
 
-  const response = await fetch(url, { next: { revalidate: 100 } });
+  const response = await fetch(url);
   const data = await response.json();
 
   const { NavSection, HeroSection, TestimonialSection } = data.story.content;

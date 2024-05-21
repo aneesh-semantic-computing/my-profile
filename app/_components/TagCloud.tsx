@@ -5,7 +5,6 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5wc from "@amcharts/amcharts5/wc";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import am5themes_Material from "@amcharts/amcharts5/themes/Material";
-import Container from "./Container";
 import styles from "./TagCloud.module.css";
 
 type Props = {
@@ -21,7 +20,7 @@ const TagCloud = ({ data }: Props) => {
     ]);
     let series = root.container.children.push(
       am5wc.WordCloud.new(root, {
-        calculateAggregates: true,
+        calculateAggregates: false,
         categoryField: "skill",
         valueField: "value",
       })
@@ -60,20 +59,9 @@ const TagCloud = ({ data }: Props) => {
     };
   }, [data]);
   return (
-    <Container className="flex flex-wrap md:pt-28 pb-18">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
-      <div className="mx-auto max-w-screen-sm">
-        <h2 id="skills" className="mb-4 text-4xl tracking-tight font-extrabold text-white">
-          Skills
-        </h2>
-        <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl">
-          Below visualisations are to showcase my skillsets. 
-          These are developed using NextJS, TypeScript, AmCharts and D3.
-        </p>
-      </div>
-      </div>
+    <section className="container p-8 mx-auto xl:px-0 flex flex-wrap items-center justify-center">
       <div id="chartdiv" className={styles.chartdiv}></div>
-    </Container>
+    </section>
   );
 };
 

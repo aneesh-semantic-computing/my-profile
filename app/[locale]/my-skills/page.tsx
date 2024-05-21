@@ -1,31 +1,54 @@
-import Navbar from '@/app/_components/Navbar';
-import SkillMatrix from '@/app/_components/SkillMatrix';
-import Skills from '@/app/_components/Skills';
-import TagCloud from '@/app/_components/TagCloud';
-import { fetchSkills, getHomePageContent } from '@/app/helpers/fetchData';
-import React from 'react';
+import Container from "@/app/_components/Container";
+import Footer from "@/app/_components/Footer";
+import SectionHeading from "@/app/_components/SectionHeading";
+// import SkillMatrix from '@/app/_components/SkillMatrix';
+import Skills from "@/app/_components/Skills";
+import { fetchSkills, getHomePageContent } from "@/app/helpers/fetchData";
+import dynamic from "next/dynamic";
+import React from "react";
+
+const Navbar = dynamic(() => import("@/app/_components/Navbar"), {
+  loading: () => <p>Loading...</p>,
+});
+
+const TagCloud = dynamic(() => import("@/app/_components/TagCloud"), {
+  loading: () => <p>Loading...</p>,
+});
 
 type Params = {
-    params: {
-        locale: string;
-    }
+  params: {
+    locale: string;
+  };
 };
 
 const MySkillsPage = async ({ params: { locale } }: Params) => {
-    const content = await getHomePageContent(locale);
-    const skills = await fetchSkills();
-    const data = skills.map((s, i) => ({ skill: s.Skill, value: Number(s.Experience) }));
+  const skillDescription = `Below visualisations are to showcase my skillsets. 
+  These are developed using NextJS, TypeScript, AmCharts and D3.`;
+  const content = await getHomePageContent(locale);
+  const skills = await fetchSkills();
+  const data = skills.map((s, i) => ({
+    skill: s.Skill,
+    value: Number(s.Experience),
+  }));
   return (
     <>
       <Navbar
         title={content.NavSection.title}
         cta_text={content.NavSection.cta_text}
       />
-      <Skills skills={skills} />
-      {/* <TagCloud data={data} /> */}
+      <Container className="flex flex-wrap md:pt-18 pb-18 text-center justify-center">
+        <SectionHeading
+          title="Skills"
+          description={skillDescription}
+          anchorId="skills"
+        />
+        <TagCloud data={data} />
+        <Skills skills={skills} />
+      </Container>
       {/* <SkillMatrix skills={skills} /><Skills skills={skills} /> */}
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default MySkillsPage
+export default MySkillsPage;

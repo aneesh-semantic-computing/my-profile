@@ -1,7 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
-import HeroHeading from "./HeroHeading";
+import dynamic from "next/dynamic";
+
+const HeroHeading = dynamic(() => import('./HeroHeading'), {
+  loading: () => <p>Loading...</p>,
+})
+
 
 type Props = {
   title: string;
