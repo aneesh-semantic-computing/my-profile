@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import AllTestimonials from "../interfaces/Testimonial";
+import { TestimonialsType } from "../interfaces/Testimonial";
 
 
-const Testimonials = ({ testimonials }: AllTestimonials) => {
+const Testimonials = ({ testimonials }:TestimonialsType) => {
   return (
     <>
       <section id="testimonials">

@@ -3,7 +3,7 @@ import * as fs from "fs";
 import { Skill } from "../interfaces/Skills";
 import { Profile } from "../interfaces/Hero";
 import { NavigationItem } from "../interfaces/Navigation";
-import AllTestimonials from "../interfaces/Testimonial";
+import { Testimonial } from "../interfaces/Testimonial";
 
 export const getHomePageContent = async (lang: string) => {
   const version = process.env.SB_DATA_VERSION;
@@ -18,7 +18,7 @@ export const getHomePageContent = async (lang: string) => {
   return {
     NavSection: NavSection[0] as NavigationItem,
     HeroSection: HeroSection[0] as Profile,
-    TestimonialSection: TestimonialSection as AllTestimonials
+    TestimonialSection: TestimonialSection as Testimonial[]
   };
 };
 

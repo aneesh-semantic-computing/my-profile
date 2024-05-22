@@ -8,6 +8,4 @@ export interface Testimonial {
     show: boolean;
 }
 
-export default interface AllTestimonials {
-    testimonials: Testimonial[]
-}
+export type TestimonialsType = { testimonials: Testimonial[] };
