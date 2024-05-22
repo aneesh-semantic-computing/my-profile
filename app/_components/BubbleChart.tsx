@@ -21,9 +21,10 @@ const BubbleChart = ({ data }: any) => {
             r={z(record.Competency ** 3 / 100)}
             fill={String(myColor(record.Category))}
             fillOpacity="0.75"
+            data-title={`${record.Skill} (Competency: ${record.Competency} out of 10)`}
             className={`${styles.bubble}`}
           >
-            <title>{`${record.Skill} (Competency: ${record.Competency} out of 10)`}</title>
+            {/* <title>{`${record.Skill} (Competency: ${record.Competency} out of 10)`}</title> */}
           </circle>
           <text
             className="chartLabel"
@@ -34,6 +35,7 @@ const BubbleChart = ({ data }: any) => {
             fontWeight="500"
             dominantBaseline="middle"
             textAnchor="middle"
+            data-title={`${record.Skill} (Competency: ${record.Competency} out of 10)`}
           >{record.Skill}</text>
         </g>
       ))}

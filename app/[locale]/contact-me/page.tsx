@@ -11,12 +11,12 @@ type Params = {
 }
 
 const ContactMePage = async ({ params: { locale } }: Params) => {
-  const content = await getHomePageContent(locale);
+  const { NavSection } = await getHomePageContent(locale);
   return (
     <>
       <Navbar
-        title={content.NavSection.title}
-        cta_text={content.NavSection.cta_text}
+        title={NavSection.title}
+        cta_text={NavSection.cta_text}
       />
       <section id="contact">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">

@@ -1,19 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import AllTestimonials from "../interfaces/Testimonial";
 
-type Props = {
-  testimonials: {
-    name: string;
-    role: string;
-    testimonial: string;
-    picture: {
-      filename: string;
-    };
-    show: boolean;
-  }[];
-};
 
-const Testimonials = ({ testimonials }: Props) => {
+const Testimonials = ({ testimonials }: AllTestimonials) => {
   return (
     <>
       <section id="testimonials">

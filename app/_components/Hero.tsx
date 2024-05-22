@@ -2,27 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
 import dynamic from "next/dynamic";
+import { Profile } from "../interfaces/Hero";
 
 const HeroHeading = dynamic(() => import('./HeroHeading'), {
   loading: () => <p>Loading...</p>,
 })
 
-
-type Props = {
-  title: string;
-  description: {
-    content: {
-      type: string;
-      content: { text: string }[];
-    }[];
-  };
-  cta_text: string;
-  picture: {
-    filename: string;
-  };
-};
-
-const Hero = ({ title, description, cta_text, picture }: Props) => {
+const Hero = ({ title, description, cta_text, picture }: Profile) => {
   return (
     <>
       <Container className="flex flex-wrap md:pt-28 pb-18">

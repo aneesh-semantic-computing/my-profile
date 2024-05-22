@@ -24,7 +24,7 @@ type Params = {
 const MySkillsPage = async ({ params: { locale } }: Params) => {
   const skillDescription = `Below visualisations are to showcase my skillsets. 
   These are developed using NextJS, TypeScript, AmCharts and D3.`;
-  const content = await getHomePageContent(locale);
+  const { NavSection } = await getHomePageContent(locale);
   const skills = await fetchSkills();
   const data = skills.map((s, i) => ({
     skill: s.Skill,
@@ -33,8 +33,8 @@ const MySkillsPage = async ({ params: { locale } }: Params) => {
   return (
     <>
       <Navbar
-        title={content.NavSection.title}
-        cta_text={content.NavSection.cta_text}
+        title={NavSection.title}
+        cta_text={NavSection.cta_text}
       />
       <Container className="flex flex-wrap md:pt-18 pb-18 text-center justify-center">
         <SectionHeading

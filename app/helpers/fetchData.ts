@@ -1,6 +1,9 @@
 import * as d3 from "d3";
 import * as fs from "fs";
 import { Skill } from "../interfaces/Skills";
+import { Profile } from "../interfaces/Hero";
+import { NavigationItem } from "../interfaces/Navigation";
+import AllTestimonials from "../interfaces/Testimonial";
 
 export const getHomePageContent = async (lang: string) => {
   const version = process.env.SB_DATA_VERSION;
@@ -13,9 +16,9 @@ export const getHomePageContent = async (lang: string) => {
   const { NavSection, HeroSection, TestimonialSection } = data.story.content;
 
   return {
-    NavSection: NavSection[0],
-    HeroSection: HeroSection[0],
-    TestimonialSection
+    NavSection: NavSection[0] as NavigationItem,
+    HeroSection: HeroSection[0] as Profile,
+    TestimonialSection: TestimonialSection as AllTestimonials
   };
 };
 
