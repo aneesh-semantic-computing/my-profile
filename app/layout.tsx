@@ -21,8 +21,10 @@ export default function RootLayout({
         <link rel="icon" fetchPriority="high" href="/favicon.ico" sizes="any" />
       </head>
       <body className={inter.className}>
-        {children}
-        <Analytics />
+        <main>
+          {children}
+          <Analytics />
+        </main>
       </body>
     </html>
   );
