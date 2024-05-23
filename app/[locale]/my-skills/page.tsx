@@ -41,6 +41,7 @@ const MySkillsPage = async ({ params: { locale } }: Params) => {
           title="Skills"
           description={skillDescription}
           anchorId="skills"
+          isMainSection={true}
         />
         <TagCloud data={data} />
         <Skills skills={skills} />
