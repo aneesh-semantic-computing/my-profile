@@ -24,7 +24,7 @@ const BubbleChart = ({ data }: any) => {
             data-title={`${record.Skill} (Competency: ${record.Competency} out of 10)`}
             className={`${styles.bubble}`}
           >
-            {/* <title>{`${record.Skill} (Competency: ${record.Competency} out of 10)`}</title> */}
+            <title>{`${record.Skill} (Competency: ${record.Competency} out of 10)`}</title>
           </circle>
           <text
             className="chartLabel"
