@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link";
 import { useState } from "react";
-import { NavigationItem } from "../interfaces/Navigation";
+import { NavigationItem } from "../types/Navigation";
 
 const Navbar = ({ title, cta_text }: NavigationItem) => {
   const [isOpen, setIsOpen] = useState(false);

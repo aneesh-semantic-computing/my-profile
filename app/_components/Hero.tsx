@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
 import dynamic from "next/dynamic";
-import { Profile } from "../interfaces/Hero";
+import { Profile } from "../types/Hero";
 
 const HeroHeading = dynamic(() => import('./HeroHeading'), {
   loading: () => <p>Loading...</p>,
