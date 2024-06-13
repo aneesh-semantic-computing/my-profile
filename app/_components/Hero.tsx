@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
 import dynamic from "next/dynamic";
-import { Profile } from "../interfaces/Hero";
+import { Profile } from "../types/Hero";
 
 const HeroHeading = dynamic(() => import('./HeroHeading'), {
   loading: () => <p>Loading...</p>,
@@ -12,9 +12,9 @@ const Hero = ({ title, description, cta_text, picture }: Profile) => {
   return (
     <>
       <Container className="flex flex-wrap md:pt-28 pb-18">
-        <div className="flex items-center w-full lg:w-1/2 lg:px-10 max-lg:order-last">
+        <div className="flex flex-wrap items-center w-full lg:w-1/2 lg:px-10 max-lg:order-last">
+          <HeroHeading />
           <div className="max-w-2xl mb-8 pr-3">
-            <HeroHeading />
             {description.content
               .filter((c) => c.type === "paragraph")
               .map((c, i) => (

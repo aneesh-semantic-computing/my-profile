@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { TestimonialsType } from "../interfaces/Testimonial";
+import { TestimonialsType } from "../types/Testimonial";
 
 
 const Testimonials = ({ testimonials }:TestimonialsType) => {
