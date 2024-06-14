@@ -30,6 +30,7 @@ const MySkillsPage = async ({ params: { locale } }: Params) => {
     skill: s.Skill,
     value: Number(s.Experience),
   }));
+
   return (
     <>
       <Navbar

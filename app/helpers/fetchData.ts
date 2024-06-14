@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import * as fs from "fs";
-import { Skill } from "../types/Skills";
+import { SkillData } from "../types/Skills";
 import { Profile } from "../types/Hero";
 import { NavigationItem } from "../types/Navigation";
 import { Testimonial } from "../types/Testimonial";
@@ -25,5 +25,15 @@ export const getHomePageContent = async (lang: string) => {
 export const fetchSkills = async () => {
   const csv = fs.readFileSync(process.cwd() + '/app/data/Skills.csv', 'utf8');
   const data = await d3.csvParse(csv);
-  return data;
+  return parseSkills(data);
 }
+
+const parseSkills = (skills: d3.DSVRowString<string>[]): SkillData[] => {
+  return skills?.map((item) => ({
+    Skill: item.Skill,
+    Category: item.Category,
+    Experience: parseFloat(item.Experience),
+    Competency: parseFloat(item.Competency),
+    LastUsed: parseFloat(item.LastUsed),
+  })).filter((item) => item.Skill && item.Category && item.Experience && item.Competency && item.LastUsed);
+};

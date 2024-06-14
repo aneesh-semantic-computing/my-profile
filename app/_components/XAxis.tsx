@@ -1,9 +1,14 @@
-// 'use client';
+// components/XAxis.tsx
 import * as d3 from "d3";
 import { useMemo } from "react";
 
-export const XAxis = ({ domain = [0, 100], range = [10, 290], axisLabel= '' }) => {
-    const xLabelHeight = 50;
+interface XAxisProps {
+  domain: [number, number];
+  range: [number, number];
+  axisLabel?: string;
+}
+
+export const XAxis: React.FC<XAxisProps> = ({ domain, range, axisLabel = '' }) => {
   const ticks = useMemo(() => {
     const xScale = d3.scaleLinear().domain(domain).range(range);
 
@@ -20,15 +25,14 @@ export const XAxis = ({ domain = [0, 100], range = [10, 290], axisLabel= '' }) =
   return (
     <>
       <path
-        d={["M", range[0], range[1], "v", -6, "H", range[1], "v", 6].join(" ")}
+        d={`M ${range[0]} ${range[1]} H ${range[1]}`}
         fill="none"
         stroke="#fff"
       />
       {ticks.map(({ value, xOffset }) => (
-        <g key={value} transform={`translate(${xOffset}, ${range[1]-5})`}>
+        <g key={value} transform={`translate(${xOffset}, ${range[1]})`}>
           <line y2="6" stroke="#fff" />
           <text
-            key={value}
             fill="#fff"
             style={{
               fontSize: "10px",
@@ -40,7 +44,9 @@ export const XAxis = ({ domain = [0, 100], range = [10, 290], axisLabel= '' }) =
           </text>
         </g>
       ))}
-      <text fill="#fff" transform={`translate(${range[1]/2}, ${range[1]+xLabelHeight})`}>{axisLabel}</text>
+      <text fill="#fff" transform={`translate(${(range[1] - range[0]) / 2}, ${range[1] + 40})`}>
+        {axisLabel}
+      </text>
     </>
   );
 };

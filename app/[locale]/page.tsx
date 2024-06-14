@@ -1,3 +1,4 @@
+// pages/index.tsx or HomePage component
 import React from "react";
 import Hero from "../_components/Hero";
 import Skills from "../_components/Skills";
@@ -13,9 +14,9 @@ const Navbar = dynamic(() => import('../_components/Navbar'), {
 })
 
 type Params = {
-    params: {
-        locale: string;
-    }
+  params: {
+    locale: string;
+  }
 }
 
 const HomePage = async ({ params: { locale } }: Params) => {
@@ -23,7 +24,7 @@ const HomePage = async ({ params: { locale } }: Params) => {
   These are developed using NextJS, TypeScript, AmCharts and D3.`;
   const { NavSection, HeroSection, TestimonialSection } = await getHomePageContent(locale);
   const skills = await fetchSkills();
-  const data = skills.map((s, i) => ({ skill: s.Skill, value: Number(s.Experience) }));
+
   return (
     <>
       <Navbar
@@ -36,9 +37,11 @@ const HomePage = async ({ params: { locale } }: Params) => {
         cta_text={HeroSection.cta_text}
         picture={HeroSection.picture}
       />
-      <Container className="flex flex-wrap md:pt-18 pb-18">
+      <Container className="flex flex-col items-center md:pt-18 pb-18">
         <SectionHeading title="Skills" description={skillDescription} anchorId="skills" />
-        <Skills skills={skills} />
+        <div className="w-full max-w-full lg:w-3/5 flex justify-center">
+          <Skills skills={skills} />
+        </div>
       </Container>
       <Testimonials testimonials={TestimonialSection}/>
       <Footer />
