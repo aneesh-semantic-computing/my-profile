@@ -30,13 +30,14 @@ const MySkillsPage = async ({ params: { locale } }: Params) => {
     skill: s.Skill,
     value: Number(s.Experience),
   }));
+
   return (
     <>
       <Navbar
         title={NavSection.title}
         cta_text={NavSection.cta_text}
       />
-      <Container className="flex flex-wrap md:pt-18 pb-18 text-center justify-center">
+      <Container className="flex flex-col items-center md:pt-18 pb-18">
         <SectionHeading
           title="Skills"
           description={skillDescription}
@@ -44,7 +45,9 @@ const MySkillsPage = async ({ params: { locale } }: Params) => {
           isMainSection={true}
         />
         <TagCloud data={data} />
-        <Skills skills={skills} />
+        <div className="w-full max-w-full lg:w-3/5 flex justify-center">
+          <Skills skills={skills} />
+        </div>
       </Container>
       {/* <SkillMatrix skills={skills} /><Skills skills={skills} /> */}
       <Footer />
